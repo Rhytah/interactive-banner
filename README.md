@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Banner Form App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This interactive web application allows users to customize a banner that displays content about Anime (one of my interests). Users can modify various aspects of the banner in real-time without page reloading.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Dynamic Banner:** Full-width banner that displays content about Anime
+- **Interactive Form:** Control panel that allows real-time customization of:
+  - Banner background color
+  - Text color
+  - Banner title and description
+  - Banner image
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React:** Front-end library for building the user interface
+- **CSS:** Custom styling for all components
+- **Jest & React Testing Library:** For unit testing components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+interactive-banner-app/
+├── src/
+│   ├── components/
+│   │   ├── Banner/
+│   │   │   ├── __tests__/
+│   │   │   │   ├── Banner.test.js
+│   │   │   ├── styles.js
+│   │   │   └── index.js
+│   │   ├── BannerForm/
+│   │   │   ├── __tests__/
+│   │   │   │   ├── BannerForm.test.js
+│   │   │   ├── styles.js
+│   │   │   └── index.js
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation and Setup
 
-### `npm run build`
+1. Clone the repository:
+   ```
+   git clone https://github.com/Rhytah/interactive-banner.git interactive-banner-app
+   cd interactive-banner-app
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server:
+   ```
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Run tests:
+   ```
+   npm test
+   ```
 
-### `npm run eject`
+## How It Works
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application uses React's state management to handle the banner configuration. When a user makes changes through the form inputs, the state is updated, which immediately reflects in the banner component without requiring a page reload.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **App.js:** The main component that manages the state and renders both the Banner and BannerForm components.
+2. **Banner.js:** Displays the customizable banner with dynamic styling based on the configuration.
+3. **BannerForm.js:** Provides a form interface for users to modify the banner's properties.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Testing
 
-## Learn More
+The application includes unit tests for all components to ensure functionality works as expected. Tests cover:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Rendering of components with correct props
+- User interactions changing the banner appearance
+- Form input validation and state updates
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Enhancements
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Potential improvements that could be added:
+- Save configuration to local storage
+- Add preset themes
+- Implement responsive design for mobile devices
+- Add animation options for the banner
